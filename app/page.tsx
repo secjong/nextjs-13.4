@@ -1,7 +1,39 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import ClientComponentSample from '@/app/clientComponentSample';
+import ServerComponentSample from '@/app/serverComponentSample';
+import ServerComponentSample2 from '@/app/serverComponentSample2';
+import ClientComponentUseAtomValueSample from '@/app/clientComponentUseAtomValueSample';
+import ClientComponentUseSetAtomSample from '@/app/clientComponentUseSetAtomSample';
+import ServerComponentReactQueryPrefetchSample from '@/app/serverComponentReactQueryPrefetchSample';
 
 export default function Home() {
+
+  return (
+    <div className={styles.main}>
+      <h1>메인 페이지</h1>
+      <div className={styles.center}>
+        abc
+      </div>
+      <div>
+        {/* 클라이언트 컴포넌트 자식으로 서버 컴포넌트 넘기기 */}
+        <ClientComponentSample>
+          <ServerComponentSample></ServerComponentSample>
+          <ServerComponentSample2></ServerComponentSample2>
+        </ClientComponentSample>
+      </div>
+      <div>
+        {/* 클라이언트 컴포넌트에서 jotai 사용하기 */}
+        <ClientComponentUseAtomValueSample></ClientComponentUseAtomValueSample>
+        <ClientComponentUseSetAtomSample></ClientComponentUseSetAtomSample>
+      </div>
+      {/* 서버 컴포넌트에서 react-query로 prefetch 한 데이터를 클라이언트 컴포넌트에서 사용하기!!! - 좀 어려움 */}
+      <div>
+        <ServerComponentReactQueryPrefetchSample></ServerComponentReactQueryPrefetchSample>
+      </div>
+    </div>
+  );
+  /*
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -92,4 +124,5 @@ export default function Home() {
       </div>
     </main>
   )
+  */
 }
