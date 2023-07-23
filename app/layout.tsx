@@ -1,8 +1,9 @@
-import './globals.css'
+import '@/app/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import JotaiProvider from '@/app/components/@external/jotai'
-import QueryClientProviders from '@/app/components/@external/react-query/queryClientProviders'
+import JotaiProvider from '@/components/@external/jotai/jotaiProvider'
+import QueryClientProviders from '@/components/@external/react-query/queryClientProviders'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,14 +18,29 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <QueryClientProviders>
-      <html lang="en">
-        <body className={inter.className}>
-          <JotaiProvider>
-            {children}
-          </JotaiProvider>
-        </body>
-      </html>
-    </QueryClientProviders>
+    <html lang="en">
+      <body className={inter.className}>
+      <QueryClientProviders>
+        <JotaiProvider>
+          <div>
+            <h1><Link href="/">헤더영역</Link></h1>            
+          </div>
+          {children}
+          <div>
+            <h2>푸터영역</h2>
+            {/* 네비게이션 영역 */}
+            <div>
+              <ul>
+                <li><Link href="/users/123">유저 상세 이동</Link></li>
+                <li><Link href="/dashboard/week">주 대시보드 이동</Link></li>
+                <li><Link href="/dashboard/month">월 대시보드 이동</Link></li>
+                <li><Link href="/feed">피드 이동</Link></li>
+              </ul>
+            </div>
+          </div>
+        </JotaiProvider>
+        </QueryClientProviders>
+      </body>
+    </html>
   )
 }

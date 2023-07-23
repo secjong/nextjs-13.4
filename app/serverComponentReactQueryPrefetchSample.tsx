@@ -1,12 +1,12 @@
-import getQueryClient from '@/app/components/@external/react-query/getQueryClient'
+import getQueryClient from '@/components/@external/react-query/getQueryClient'
 import {Hydrate, dehydrate} from '@tanstack/react-query'
-import {getRandomUser} from '@/lib/data'
+import {getRandomUserInternal} from '@/lib/internalApi'
 import ClientComponentHydrateSample from '@/app/clientComponentHydrateSample'
 
 export default async function ServerComponentReactQueryPrefetchSample() {
 
   const queryClient = getQueryClient()
-  await queryClient.prefetchQuery(['randomUser'], getRandomUser) // 중요!!!
+  await queryClient.prefetchQuery(['randomUser'], getRandomUserInternal) // 중요!!!
   const dehydratedRandomUser = dehydrate(queryClient)
 
   return (
