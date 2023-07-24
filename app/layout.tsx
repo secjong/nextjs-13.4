@@ -25,16 +25,22 @@ export default function RootLayout({
           <div>
             <h1><Link href="/">헤더영역</Link></h1>            
           </div>
+          <hr />
           {children}
+          <hr />
           <div>
             <h2>푸터영역</h2>
             {/* 네비게이션 영역 */}
             <div>
               <ul>
                 <li><Link href="/users/123">유저 상세 이동</Link></li>
+                <li><Link href="/photos/123">포토 상세 이동</Link></li>
                 <li><Link href="/dashboard/week">주 대시보드 이동</Link></li>
                 <li><Link href="/dashboard/month">월 대시보드 이동</Link></li>
-                <li><Link href="/feed">피드 이동</Link></li>
+                <li><Link href="/feeds">피드 이동</Link></li>
+                <li><Link href="/useSelectedLayoutSegmentSample">링크샘플 이동</Link></li>
+                <li><Link href="/useSelectedLayoutSegmentsSample">breadcrums샘플 이동</Link></li>
+                <li><Link href="/template">template 샘플 이동</Link></li>
               </ul>
             </div>
           </div>
