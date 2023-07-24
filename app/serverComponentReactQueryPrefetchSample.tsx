@@ -6,7 +6,10 @@ import ClientComponentHydrateSample from '@/app/clientComponentHydrateSample'
 export default async function ServerComponentReactQueryPrefetchSample() {
 
   const queryClient = getQueryClient()
-  await queryClient.prefetchQuery(['randomUser'], getRandomUserInternal) // 중요!!!
+  await queryClient.prefetchQuery({
+    queryKey: ['randomUser'],
+    queryFn: getRandomUserInternal
+  }) // 중요!!!
   const dehydratedRandomUser = dehydrate(queryClient)
 
   return (
