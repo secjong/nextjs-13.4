@@ -2,6 +2,6 @@
 
 export default function RootError() {
   return (
-    <h1>에러페이지</h1>
+    <h1>Root 에러페이지</h1>
   )
 }

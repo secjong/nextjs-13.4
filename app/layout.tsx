@@ -33,14 +33,16 @@ export default function RootLayout({
             {/* 네비게이션 영역 */}
             <div>
               <ul>
-                <li><Link href="/users/123">유저 상세 이동</Link></li>
-                <li><Link href="/photos/123">포토 상세 이동</Link></li>
-                <li><Link href="/dashboard/week">주 대시보드 이동</Link></li>
-                <li><Link href="/dashboard/month">월 대시보드 이동</Link></li>
-                <li><Link href="/feeds">피드 이동</Link></li>
-                <li><Link href="/useSelectedLayoutSegmentSample">링크샘플 이동</Link></li>
-                <li><Link href="/useSelectedLayoutSegmentsSample">breadcrums샘플 이동</Link></li>
-                <li><Link href="/template">template 샘플 이동</Link></li>
+                <li><Link href="/users/123" prefetch={false}>유저 상세 이동</Link></li>
+                <li><Link href="/photos/123" prefetch={false}>포토 상세 이동</Link></li>
+                <li><Link href="/dashboard/week" prefetch={false}>주 대시보드 이동</Link></li>
+                <li><Link href="/dashboard/month" prefetch={false}>월 대시보드 이동</Link></li>
+                <li><Link href="/feeds" prefetch={false}>피드 이동</Link></li>
+                <li><Link href="/useSelectedLayoutSegmentSample" prefetch={false}>링크샘플 이동</Link></li>
+                <li><Link href="/useSelectedLayoutSegmentsSample" prefetch={false}>breadcrums샘플 이동</Link></li>
+                <li><Link href="/template" prefetch={false}>template 샘플 이동</Link></li>
+                <li><Link href="/loadingSample" prefetch={false}>loading 샘플 이동</Link></li>
+                <li><Link href="/errorSample" prefetch={false}>error 샘플 이동</Link></li>
               </ul>
             </div>
           </div>

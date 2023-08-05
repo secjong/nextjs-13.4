@@ -14,7 +14,8 @@ export default function ClientComponentHydrateSample() {
   const [randomUserList, setRandomUserList] = useAtom(randomUserListAtom)
 
   // prefetch 된 데이터는 서버상태관리에 저장되어, Hydrate 로 감싸진 클라이언트 컴포넌트에서 useQuery로 접근할 수 있다.
-  const {data, refetch}: UseQueryResult<Root> = useQuery({
+  // useQuery 실행시 새로운 쿼리 인스턴스가 생성된다!
+  const {data, error, isSuccess, isError, isLoading, refetch}: UseQueryResult<Root> = useQuery({
     queryKey: ['randomUser'],
     queryFn: getRandomUserExternal
   })
