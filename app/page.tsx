@@ -10,6 +10,8 @@ import ClientComponentAtomWithStorageSample from '@/app/clientComponentAtomWithS
 
 export default function Home() {
 
+  const feedIds = ['1', '2', '3']
+
   return (
     <div className={styles.main}>
       <div className={styles.description}>
@@ -35,6 +37,19 @@ export default function Home() {
       <div>
         <ClientComponentAtomWithStorageSample></ClientComponentAtomWithStorageSample>
       </div>
+
+      <div>모달 라우트 인터셉트 샘플 Feed 페이지</div>
+      <div>
+        <ul>
+          {
+            feedIds.map((feedId, feedIndex) => (
+              <li key={feedIndex}><Link href={`/feed/${feedId}`}>피드{feedId}</Link></li>
+            ))
+          }
+        </ul>
+      </div>
+
+      
     </div>
   );
   /*

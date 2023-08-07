@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react'
 export default function ClientErrorComponent() {
 
   useEffect(() => {
-    throw new Error('클라이언트컴포넌트 에러 발생')
+    // throw new Error('클라이언트컴포넌트 에러 발생')
   }, [])
   
   return (

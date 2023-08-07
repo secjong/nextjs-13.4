@@ -38,6 +38,7 @@ export default function RootLayout({
                 <li><Link href="/dashboard/week" prefetch={false}>주 대시보드 이동</Link></li>
                 <li><Link href="/dashboard/month" prefetch={false}>월 대시보드 이동</Link></li>
                 <li><Link href="/feeds" prefetch={false}>피드 이동</Link></li>
+                <li><Link href="/feed" prefetch={false}>피드2 이동</Link></li>
                 <li><Link href="/useSelectedLayoutSegmentSample" prefetch={false}>링크샘플 이동</Link></li>
                 <li><Link href="/useSelectedLayoutSegmentsSample" prefetch={false}>breadcrums샘플 이동</Link></li>
                 <li><Link href="/template" prefetch={false}>template 샘플 이동</Link></li>
