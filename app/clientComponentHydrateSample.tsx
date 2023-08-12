@@ -2,7 +2,7 @@
 
 import {useQuery, UseQueryResult} from '@tanstack/react-query'
 import {getRandomUserExternal} from '@/lib/externalApi'
-import {Root, Result} from '@/types/randomUser'
+import {User, Result} from '@/types/randomUser'
 import Image from 'next/image'
 import {randomUserListAtom} from '@/store/data'
 import {useAtom} from 'jotai'
@@ -15,7 +15,7 @@ export default function ClientComponentHydrateSample() {
 
   // prefetch 된 데이터는 서버상태관리에 저장되어, Hydrate 로 감싸진 클라이언트 컴포넌트에서 useQuery로 접근할 수 있다.
   // useQuery 실행시 새로운 쿼리 인스턴스가 생성된다!
-  const {data, error, isSuccess, isError, isLoading, refetch}: UseQueryResult<Root> = useQuery({
+  const {data, error, isSuccess, isError, isLoading, refetch}: UseQueryResult<User> = useQuery({
     queryKey: ['randomUser'],
     queryFn: getRandomUserExternal
   })

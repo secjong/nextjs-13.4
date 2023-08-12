@@ -1,4 +1,4 @@
-export interface Root {
+export interface User {
   results: Result[]
   info: Info
 }
