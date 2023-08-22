@@ -1,7 +1,7 @@
 import getQueryClient from "@/components/@external/react-query/getQueryClient"
-import { getPostsInternal } from "@/lib/internalApi";
-import { GET } from "./api/route";
-import { NextResponse } from "next/server";
+import { getPostsInternal } from "@/lib/internalApi"
+import { GET } from "./api/route"
+import { NextResponse } from "next/server"
 
 export default async function RouteHandlerSamplePage() {
 
