@@ -32,3 +32,16 @@ export async function getPostsInternal() {
     }, 2000);
   })
 }
+
+export async function setPostInternal(post: Post) {
+  const domain = process.env.INTERNAL_JSONPLACEHOLDER_DOMAIN
+  const response = await fetch(`${domain}/posts`, {
+    method: 'POST',
+    body: JSON.stringify(post),
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8'
+    }
+  })
+  const data = await response.json()
+  return data
+}

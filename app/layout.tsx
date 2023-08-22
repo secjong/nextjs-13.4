@@ -45,6 +45,7 @@ export default function RootLayout({
                 <li><Link href="/loadingSample" prefetch={false}>loading 샘플 이동</Link></li>
                 <li><Link href="/errorSample" prefetch={false}>error 샘플 이동</Link></li>
                 <li><Link href="/routeHandlerSample" prefetch={false}>route handler 샘플 이동</Link></li>
+                <li><Link href="/serverActionSample" prefetch={false}>server action 샘플 이동</Link></li>
               </ul>
             </div>
           </div>
